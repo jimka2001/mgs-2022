@@ -30,7 +30,7 @@ class SetsAndFunctionsTestSuite extends AnyFunSuite {
   test("quadraticFormula") {
     assert(quadraticFormula(1, 0, 0) == List(0.0))
     assert(
-      quadraticFormula(1, 2, 3).size == 2
+      quadraticFormula(1, 2, 3).size == 0
     ) // assert that there are two roots
     println(quadraticFormula(1, 1, 1))
   }
