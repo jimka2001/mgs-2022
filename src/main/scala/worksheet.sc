@@ -1,6 +1,5 @@
-val hello = "Hello world "
-hello * 5
+val b = 2
 
-1234 + 2000
+b.toString()
 
-"hello" + " " + "world"
+println(b)

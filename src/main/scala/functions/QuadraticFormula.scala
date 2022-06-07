@@ -12,15 +12,18 @@ object QuadraticFormula {
 
   def quadraticFormula(a: Int, b: Int, c: Int): List[Double] = {
     val d = discriminant(a, b, c)
-     if (d == 0)
-      List((-b / (2 * a)))
-     else if (d < 0)
-      List()
-     else
-      List(
+    // if there is 1 root, return it as a singleton list
+    if (d == 0)
+      List[Double]((-b / (2 * a)))
+    // if there aren't any roots, return an empty list
+    else if (d < 0)
+      List[Double]()
+    // if there are 2 roots, return a list of them in increasing order
+    else
+      List[Double](
         ((-b + sqrt(d)) / (2 * a)),
         ((-b - sqrt(d)) / (2 * a))
-      )
+      ).sorted
   }
 
   // TASK:
@@ -38,9 +41,10 @@ object QuadraticFormula {
 
   def main(argv: Array[String]): Unit = {
     println("Hello this is main of QuadraticFormula")
-    println(quadraticFormula(1, 2, -3) sortWith (_ < _))
-    println(quadraticFormula(-1, 3, 7) sortWith (_ < _))
-    println(quadraticFormula(1, 2, 1) sortWith (_ < _))
-    println(quadraticFormula(1, 1, 1) sortWith (_ < _))
+    println(quadraticFormula(1, 2, -3))
+    println(quadraticFormula(-1, 3, 7))
+    println(quadraticFormula(1, 2, 1))
+    println(quadraticFormula(1, 1, 1))
+    println(quadraticFormula(0, 1, 1))
   }
 }
