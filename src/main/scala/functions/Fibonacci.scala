@@ -1,7 +1,7 @@
 package functions
 
 object Fibonacci {
-
+  val b = 1 + 1
   // TASK
   //    Implement fibonacci.   Given n, compute the nth Fibonacci number.
   def fibonacci(n: Int): Int = {
