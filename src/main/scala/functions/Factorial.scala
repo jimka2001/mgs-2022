@@ -11,12 +11,9 @@ object Factorial {
     if (n == 0)
       1
     else
-      // "factorial" is this function; it calls itself within the function. 
-      // It'll keep calling itself until it reaches 0
+
       n * factorial(n - 1)
   }
 
-  def main(argv: Array[String]): Unit = {
-    println(factorial(5))
-  }
+  def main(argv: Array[String]): Unit = {}
 }
