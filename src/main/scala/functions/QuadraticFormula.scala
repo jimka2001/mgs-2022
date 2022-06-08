@@ -4,6 +4,7 @@ import scala.math.sqrt
 
 object QuadraticFormula {
 
+
   def discriminant(a:Int, b:Int, c:Int): Int = {
     b*b - 4*a*c
   }
@@ -29,5 +30,8 @@ object QuadraticFormula {
     println("Hello this is main of QuadraticFormula")
     println(quadraticFormula(1, 2, -3))
     println(quadraticFormula(-1, 3, 7))
+    println(quadraticFormula(1, 2, 1))
+    println(quadraticFormula(1, 1, 1))
+    println(quadraticFormula(0, 1, 1))
   }
 }

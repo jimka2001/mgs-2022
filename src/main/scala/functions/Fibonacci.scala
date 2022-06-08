@@ -1,7 +1,7 @@
 package functions
 
 object Fibonacci {
-
+  val b = 1 + 1
   // TASK
   //    Implement fibonacci.   Given n, compute the nth Fibonacci number.
   def fibonacci(n: Int): Int = {
@@ -10,6 +10,7 @@ object Fibonacci {
     else if (n == 2)
       1
     else
+
       fibonacci(n - 1) + fibonacci(n - 2)
   }
 
@@ -18,3 +19,4 @@ object Fibonacci {
     } println(s"$n --> ${fibonacci(n)}")
   }
 }
+//
