@@ -16,7 +16,7 @@
 // LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+/*
 import functions.Power._
 import org.scalatest.funsuite.AnyFunSuite
 
@@ -48,3 +48,4 @@ class PowerTestSuite extends AnyFunSuite {
     assert(power(List(1, 2), 3) == List(1, 2, 1, 2, 1, 2))
   }
 }
+*/
