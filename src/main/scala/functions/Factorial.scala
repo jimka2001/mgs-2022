@@ -12,9 +12,13 @@ object Factorial {
     else
       n * factorial(n - 1)
   }
-
   def main(argv: Array[String]): Unit = {
-    for { n <- 1 to 20 
-    } println(s"$n --> ${factorial(n)}")
+    for { n <- 1 to 20
+    } println(s"$n --> Sc : ${factorial(n)}")
   }
 }
+
+//s = interprelate --> searches value into the println
+//(s"$n  --> ${factorial(n)}") --> sequence good for debugging
+//off-by-one problem --> 
+//  functional programing is done without mutations --> Optimization / pessimation

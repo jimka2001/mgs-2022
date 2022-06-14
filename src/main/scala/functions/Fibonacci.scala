@@ -1,10 +1,10 @@
 package functions
 
 object Fibonacci {
-  val b = 1 + 1
   // TASK
   //    Implement fibonacci.   Given n, compute the nth Fibonacci number.
   def fibonacci(n: Int): Int = {
+    assert(n>0)
     if (n == 1)
       1
     else if (n == 2)
@@ -15,8 +15,9 @@ object Fibonacci {
   }
 
   def main(argv: Array[String]): Unit = {
-    for{n <- 1 to 20
-    } println(s"$n --> ${fibonacci(n)}")
+    for { n <- 1 to 20 } {
+      println(s"$n --> ${fibonacci(n)}")
+    }
   }
 }
 //
