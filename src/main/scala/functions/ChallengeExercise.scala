@@ -12,7 +12,7 @@ object ChallengeExercise{
                     c <- (m to n)
                     if (a*a + b*b == c*c)}
                         yield List(a, b, c)
-        else if (o == "reduced")
+        /*else if (o == "reduced")
             for{ a <- (m to n)
                  b <- (m to n)
                  if (a < b)
@@ -25,7 +25,7 @@ object ChallengeExercise{
                             else if !((b / d).isValidInt)
                                 yield List(a, b, c)
                             else if !((c / d).isValidInt)}
-                                yield List(a, b, c)
+                                yield List(a, b, c)*/
         else
             List(List())
     }

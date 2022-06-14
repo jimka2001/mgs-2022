@@ -5,14 +5,6 @@ import cats.instances.int
 import scala.collection.View
 object QuadraticFormula {
 
-<<<<<<< HEAD
-
-  def discriminant(a:Int, b:Int, c:Int): Int = {
-    b*b - 4*a*c
-  }
-=======
->>>>>>> c0c6f9ad6be196425dbdf5053dea01ab36feb047
-
 // the sign of the discriminant determines how many real roots the polynomial has
   def discriminant(a: Int, b: Int, c: Int): Int = {
     b * b - 4 * a * c
@@ -48,14 +40,5 @@ object QuadraticFormula {
 
   def main(argv: Array[String]): Unit = {
     println("Hello this is main of QuadraticFormula")
-<<<<<<< HEAD
-    println(quadraticFormula(1, 2, -3))
-    println(quadraticFormula(-1, 3, 7))
-    println(quadraticFormula(1, 2, 1))
-    println(quadraticFormula(1, 1, 1))
-    println(quadraticFormula(0, 1, 1))
-=======
-
->>>>>>> c0c6f9ad6be196425dbdf5053dea01ab36feb047
   }
 }
