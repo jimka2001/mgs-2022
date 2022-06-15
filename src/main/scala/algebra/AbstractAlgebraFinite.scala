@@ -3,6 +3,7 @@ package algebra
 object AbstractAlgebraFinite {
   // TASK: determine whether the given element, e, is actually
   //   the identity element for the set under the operation.
+  // GIVEN
   def isIdentity[T](e: T, s: Set[T], op: (T, T) => T): Boolean = {
     s.forall { x => // e + x == x + e == x
       op(e, x) == x &&
@@ -15,6 +16,8 @@ object AbstractAlgebraFinite {
   //    otherwise, find e such that e is the identity,
   //    then return Some(e).  This function should make use of
   //    the isIdentity function.
+  //
+  // Contributors: REAGAN, DREW
   def findIdentity[T](s: Set[T], op: (T, T) => T): Option[T] = {
     // The identity is guaranteed to be unique if it exists.
     // Because if there are two identifies e1 and e2, then
@@ -33,6 +36,8 @@ object AbstractAlgebraFinite {
   // TASK:  Is the given set closed under the given operation?
   //   I.e., is it true that for ever x and y in s, that
   //   op(x,y) is also in s?
+  //
+  // Contributors: Thomas, Gracyn
   def isClosed[T](s: Set[T], op: (T, T) => T): Boolean = {
     s.forall(a => 
      s.forall(b =>
@@ -41,6 +46,8 @@ object AbstractAlgebraFinite {
 
   // TASK: is it true that for all a, b, and c in s, that
   //   op(op(a, b), c) == op(a, op(b, c))?
+  //
+  // Contributors: Sydney, Rachele, Cole
   def isAssociative[T](s: Set[T], op: (T, T) => T): Boolean = {
     s.forall { a =>
       s.forall { b =>
@@ -50,9 +57,12 @@ object AbstractAlgebraFinite {
       }
     }
   }
+
   // Given a set and binary operation, detect exhaustively
   //   whether it is a monoid.  I.e., check all possible cases
   //   of the monoid axioms.
+  //
+  // GIVEN
   def isMonoid[T](s: Set[T], op: (T, T) => T): Boolean = {
     isClosed(s, op) &&
     isAssociative(s, op) &&
@@ -62,6 +72,8 @@ object AbstractAlgebraFinite {
   // TASK: Given a set and binary operation, detect exhaustively
   //   whether it is a group.  I.e., check all possible cases
   //   of the group axioms.   Make use of the isMonoid function.
+  //
+  // Contributors: Akhila, Jaeho, Jasmine
   def isGroup[T](s: Set[T], op: (T, T) => T): Boolean = {
     // is monoid?
     // every element has identity
@@ -74,6 +86,8 @@ object AbstractAlgebraFinite {
 
   // TASK: Given a set and binary operation, detect exhaustively
   //   whether the operation is commutative
+  //
+  // Contributors: Rachele, Sydney, Cole
   def isAbelian[T](s: Set[T], op: (T, T) => T): Boolean = {
     s.forall { x =>
       s.forall { y =>
@@ -86,6 +100,8 @@ object AbstractAlgebraFinite {
   //   whether it is a ring.  I.e., check all possible cases
   //   of the ring axioms.  Make use of the isGroup, isAbelian,
   //   and isMonoid functions.
+  //
+  // Contributors: Reagan, Drew
   def isRing[T](s: Set[T], add: (T, T) => T, times: (T, T) => T): Boolean = {
     // does addition make an Abelian group
     // does times make a monoid
@@ -112,6 +128,8 @@ object AbstractAlgebraFinite {
   //   functions.   Be careful, the set is not necessarily a group,
   //   you must test group-ness on the set minus the zero element, which
   //   you must find using the findIdentity function.
+  //
+  // Contributors: Thomas, Gracyn
   def isField[T](s: Set[T], add: (T, T) => T, times: (T, T) => T): Boolean = {
     // Is times commutative?
     // Is s ring using add and times?
