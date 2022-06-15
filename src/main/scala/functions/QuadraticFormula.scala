@@ -1,6 +1,10 @@
 package functions
 
 import scala.math.sqrt
+
+// TASK:
+//      Write a test to validate the following function.
+
 import cats.instances.int
 import scala.collection.View
 object QuadraticFormula {
@@ -23,7 +27,6 @@ object QuadraticFormula {
     else
       List((-b - sqrt(d)) / (2.0 * a), (-b + sqrt(d)) / (2.0 * a))
   }
-
 
   // TASK:
   //    Update the formula to compute the discriminant,
