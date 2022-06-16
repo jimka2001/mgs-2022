@@ -34,14 +34,6 @@ object Recursion {
     recur(lower,0)
   }
 
-  // sum a list of anything that is summable
-  def sumList[T](items: List[T], ident: T, add: (T, T) => T): T = {
-    ???
-  }
-
-  def harmonicSum(items: List[Double]): Double = {
-    ???
-  }
 
   def removeFromList[T](items: List[T], deleteMe: T): List[T] = {
     ???
