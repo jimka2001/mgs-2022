@@ -9,11 +9,11 @@ object Power {
   //      also support a negative exponent, however the first one cannot.
   //      Why can it not?
   //
-  def power(b: Int, n: Int): Int = {
+  def powerInt(b: Int, n: Int): Int = {
     if (n == 0)
       1
     else
-      b * power(b, n - 1)
+      b * powerInt(b, n - 1)
   }
 
   def power(b: Double, n: Int): Double = {
