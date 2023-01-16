@@ -1,4 +1,4 @@
-## Copyright (C) 2021 Jim Newton
+## Copyright (C) 2023 Jim Newton
 
 all: pdf
 
