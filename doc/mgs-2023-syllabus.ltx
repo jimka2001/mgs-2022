@@ -26,6 +26,16 @@
 \newcommand\ie{\textit{i.e.}\xspace}
 \newcommand\Ie{\textit{I.e.}\xspace}
 
+\newcommand\R{\mathbb{R}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\C{\mathbb{C}}
+\newcommand\F{\mathbb{F}}
+
+\newcommand\jleft{\mathopen{}\mathclose\bgroup\left}
+\newcommand\jright{\aftergroup\egroup\right}
+\newcommand\jparen[1]{\jleft(#1\jright)}
 
 
 \title{Duels and Duals,   Mathematical Abstraction and Programming,\\
@@ -131,10 +141,8 @@ learn a lot.
 
 
 \begin{figure}
-\includegraphics[height=4.2cm]{liebniz-newton.png}
-%% \url{https://stemfellowship.org/who-got-there-first-newton-leibniz-and-their-work-on-calculus/}
-%% from Wikipedia.
-\includegraphics[height=4.2cm]{scala-programming.jpg}
+  \centering
+  \includegraphics[width=0.85\textwidth]{scala-programming.jpg}
 \end{figure}
 
 
@@ -168,8 +176,8 @@ languages such as Python, Java Script, Lisp, C++, etc.
 Week & Day & Unit & Activities\\
 \hline
 ~&&&\\
-1 & Mon & 0, 1 & Environment Set-up, Hello World, share text on cloud\\
-1 & Tue & 2 & Sets and Functions
+1 & Mon & 0, 1 & Hello World on the Cloud\\
+1 & Tue & 2 & Sets and Functions\\
 1 & Wed & 2 & \\
 1 & Thu & 3 & Logic and Loops\\
 1 & Fri & 3 & \\
@@ -456,23 +464,19 @@ set-up, so we'll troubleshoot as we go.
 \end{itemize}
 
 
+\clearpage
 
 \chapter{Mathematical Sets and Functions}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Function_machine2.png}
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.85\textwidth]{math.jpg}
 \end{figure}
-
 
 
 In this unit we will look at functions both from a mathematical
 perspective and also from a programming perspective.  There are some
 important similarities and some important differences.
 
-\begin{figure}
-\centering
-\includegraphics[width=0.85\textwidth]{math.jpg}
-\end{figure}
 
 We would like to talk about functions.  But where should we start the conversation?
 
@@ -481,7 +485,26 @@ functions have names, like $\sin$, $\cos$, and $\log$.  Sometimes
 functions lack names but have formulas such as
 $\frac{x^2-1}{x^2+2x+1}$.
 
+\section{Set operations}
+
+\begin{itemize}
+\item is-element-of: $x\in A$
+\item is-subset-of: $A\subset B$
+\item empty-set: $\emptyset$
+\item union: $A\cup B$
+\item intersection: $A\cap B$
+\item complement: $A\setminus B$ or $\overline{B}$
+\item De Morgan's theorem: $\overline{A\cup B} = \overline{A} \cap \overline{B}$, or dually $\overline{A\cap B} = \overline{A} \cup \overline{B}$.
+\end{itemize}
+
 \section{Specifying functions}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Function_machine2.png}
+\end{figure}
+
+
 
 What is a function? A function such as
 \[f : X \to Y\]
@@ -611,32 +634,12 @@ numbers.  Let $F(n)$ denote the n'th Fibonacci number.
   \end{cases}
 \end{equation}
 
-
-
-Likewise, we can define the set of subsets of size $n$.  We use set
-comprehension notation, see Section~\ref{sec.set.comprehension}.
-
-\begin{equation}\label{eq.cases.1}
-  \mathbb{P}_n(S) = \begin{cases}
-    \{\emptyset\} &\,; \text{if $n=0$}\\
-    \big\{\{x\} \cup y \mid x \in S, y \in \mathbb{P}_{n-1}(S \setminus \{x\})\big\}  &\,; \text{if $n > 0$}
-  \end{cases}
-\end{equation}
-
-Notice that Equation~\eqref{eq.cases.1} specifies a function, not of
-numbers, but of sets.  Its input is a set, and its output is a set of
-sets.  I.e., the domain of $\mathbb{P}_n$ is a set of sets, and its
-range is a set of sets of sets.
-
-
 \chapter{Programmatic Sets and Functions}
 
-\begin{figure}
+\begin{figure}[b!]
 \centering
 \includegraphics[width=0.65\textwidth]{cs.jpg}
 \end{figure}
-
-
 
 
 \section{Functional Programming Languages}
@@ -756,23 +759,10 @@ Figure~\ref{fig.scala.program} shows some of the elements of a Scala program.
 \label{sec.coding.1}
 
 
-We implement the \code{fixedSizedSubsets} in live-coding.  The program
-will be modeled after equation~\eqref{eq.cases.1} in
-Section~\ref{sec.recurrence}.
-
-We write some tests.  Some of which pass, and some of which fail.  To
-compute the number of subsets of size $k$ of a set of size $n$ we need
-to compute~$n \choose k$ using the \code{factorial} function, which
-you will develop.
-
-
-You will also implement \code{countFixedSizedSubsets} as part of your
-programming exercises.  This function is also needed to pass the
-tests.
 
 
 
-\begin{figure}
+\begin{figure}[b!]
 \centering
 \includegraphics[width=0.85\textwidth]{coding.jpg}
 \end{figure}
@@ -793,10 +783,6 @@ then
   The test should go in the file \texttt{QuadraticFormula.scala} in
   directory \texttt{src/test/scala/functions}.  There is
   already a function stub you can use.
-\item Extend the tests.  Remember
-  that to test values of type \code{Double} you may need check
-  whether the absolute value is less than some threshold ($\varepsilon$) rather than
-  testing for exact equivalence.
 \item Enhance \code{quadraticFormula}: Notice that the current
   implementation is inefficient, because it computes almost the same
   thing twice.  Also if you call the function with \code{a,b,c} for
@@ -849,6 +835,128 @@ then
 \item Search on the internet and find the Binet's formula for computing the nth Fibonacci number.
   Implement this function and compare the results to the recursive implementation.
 \end{itemize}
+
+\chapter{Logic and Looping}
+
+\section{Logic}
+
+\begin{definition}[proposition]
+  A \emph{proposition} is a logical statement which has a truth value of true or false.
+\end{definition}
+
+For example, let $p$ be the proposition: Light travels at 300,000 km/s
+in free space; and let $q$ be the proposition: the atomic number of
+carbon is 33.
+
+We may ask: is $p$ true.  The answer is, yes.  Likewise, we may ask: is
+$q$ true.  The answer is, no.
+
+\begin{definition}
+  A \emph{predicate} is a proposition with arguments.  \Ie, a
+  \emph{predicate} is a function which evaluates a proposition, given
+  an argument.
+\end{definition}
+
+Examples of predicates are \emph{is-prime}, or
+\emph{is-greater-than-42}.  For each of these, given an input value,
+we can determine whether the corresponding proposition is true or
+false.  Given the value 13, we may ask: Is 13 prime?  Given the value
+15, we may as: Is 15 prime?  Given the value -12, we may ask: Is -12
+greater than 42?
+
+For example, let $g(n)$ be the predicate $n is prime$.  Now we may ask
+$g(13)$ and $g(15)$.  $g(13)$ is true while $g(15)$ is false.
+Similarly if $h(n)$ is the predicate $n>42$, then we may ask $h(-12)$
+and get false.
+
+Given two propositions, we may combine them by conjunction.  The
+resulting proposition is true if and only if both of the original
+propositions are true.  \Eg, Proposition $p$: Light travels at 300,000
+km/s in free space. Proposition $q$: The atomic number of carbon is 33.
+Since $p$ true, and $q$ is false, the
+proposition \emph{conjoining} the two, $p\wedge q$, is consequently false.
+
+Likewise, predicates can be conjoined (or intersected).  If we can
+compute whether given an integer $n$, whether it is prime, and we can
+also compute whether it is greater than 42, we can therefore compute
+whether it is prime and greater than 42.
+
+$(g\wedge h)(n)$ is true if $g(n) \wedge h(n)$.
+
+
+Disjunction is the dual of conjunction.  The disjunction of two
+propositions is true if either of the original propositions is true.
+For example, given $p$ and $q$ as above, the disjunction $p\vee q$ is
+true because at least one of $p$ and $q$ is true.
+
+Similarly given an integer, $n$, we can decide whether it is prime and
+greater than 42, by testing both predicates and combining the output
+by disjunction.
+
+If a predicate is true, its logical negative is false. If a predicate
+is false, then its logical negative is true.  The if $p$ is a
+predicate then either $p$ is true or $\neg p$ is true.
+
+
+We may combine set mechanics and predicates with something called a \emph{set comprehension}.
+\[\{m\in\N \mid m > 42\}\]
+
+The idea is that we take the subset of some set ($\N$ in this case) by
+taking all the elements of that set which satisfy a given predicate.
+
+\section{Implication}
+
+If proposition $q$ is true whenever $p$ is true then we can say that
+$p$ implies $q$, or $p\implies q$.  Note that $p\implies q$ does not
+say anything about what happens if $p$ is false.
+
+An implication is yet again a proposition, and like any proposition it may be true or false.  For example the following is a false implication:  ${n\in \Z \implies n>1}$. However, the following implication is true: ${n\in N \implies n= 0 \vee n\geq 1}$.
+
+
+\section{Quantifiers}
+
+\[\forall x \in N, n > -1\]
+
+\[\exists x \in N, n > 42\]
+
+
+
+\section{De Morgan's theorem}
+
+We say De Morgan's theorem for sets already.   But logic and set theory are duals, so De Morgan's theorm can also be stated for propositions and predicates.
+
+\[\neg \jparen{p(x) \vee q(x)} = \neg p(x) \wedge \neq q(x)\]
+
+\[\neg \jparen{p(x) \wedge q(x)} = \neg p(x) \vee \neq q(x)\]
+
+We may apply De Morgan's theorm to quantifiers
+
+\[\jparen{\forall x \in N, p(n)} = \neg \jparen{\exists x \in \N, \neg p(n)}\]
+\[\neg \jparen{\forall x \in N, p(n)} = \jparen{\exists x \in \N, \neg p(n)}\]
+
+\[ \jparen{\exists x \in N, p(n)} = \neg \jparen{\forall x \in \N, \neg p(n)}\]
+\[\neq \jparen{\exists x \in N, p(n)} = \jparen{\forall x \in \N, \neg p(n)}\]
+
+
+
+\section{Looping}
+
+Three very common styles of loops are
+
+\begin{itemize}
+\item loop for detection
+\item loop for collection
+\item loop for side-effect
+\end{itemize}
+
+\subsection{Loop for detection}
+
+\subsection{Loop for collection}
+
+\subsection{Loop for side-effect}
+
+
+\section{Programming Projects}
 
 
 \chapter{Abstract Algebra}
@@ -987,9 +1095,9 @@ identity element: $e_1$ and $e_2$?  The answer is no, but why?
   
 \item ${(\mathbb{R},\times)}$, the set of positive real numbers under multiplication is a monoid.
 
-\item The set of $2\times 3$ matrices under addition is a monoid.  (See Section~\ref{sec.matrix.multiply} for a reminder of matrix addition.)
+\item The set of $2\times 3$ matrices under addition is a monoid.  
 
-\item The set of $2\times 3$ matrices under multiplication is not a monoid.  However the set of $3\times 3$  matrices under multiplication is a monoid. Why? (See Section~\ref{sec.matrix.multiply} for a reminder of matrix multiplication.)
+\item The set of $2\times 3$ matrices under multiplication is not a monoid.  However the set of $3\times 3$  matrices under multiplication is a monoid. Why? 
 
 \item The set of subsets of a given set using the operation of union is a monoid.  What is the identity element?
 \item The set of subsets of a given set using the operation of intersection is a monoid.  What is the identity element?
