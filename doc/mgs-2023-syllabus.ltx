@@ -852,17 +852,22 @@ We may ask: is $p$ true.  The answer is, yes.  Likewise, we may ask: is
 $q$ true.  The answer is, no.
 
 \begin{definition}
-  A \emph{predicate} is a proposition with arguments.  \Ie, a
-  \emph{predicate} is a function which evaluates a proposition, given
-  an argument.
+  A \emph{predicate} is a proposition valued function.  We talk about
+  the predicate being true in the case that the proposition which it
+  outputs is true.
 \end{definition}
 
-Examples of predicates are \emph{is-prime}, or
-\emph{is-greater-than-42}.  For each of these, given an input value,
-we can determine whether the corresponding proposition is true or
-false.  Given the value 13, we may ask: Is 13 prime?  Given the value
-15, we may as: Is 15 prime?  Given the value -12, we may ask: Is -12
-greater than 42?
+
+
+
+
+Examples of predicates are \emph{prime(x)}, or \emph{x > 42}.  For
+each of these, given an input value, we derive a proposition, then we
+can ask whether that proposition is true or false.  Given the
+predicate $prime(x)$ and given the value 13, we construct the
+proposition: 13 is prime; then we may as whether that proposition is
+true. Given the value 15, we may as: Is 15 prime?  Given the value
+-12, we may ask: Is -12 greater than 42?
 
 For example, let $g(n)$ be the predicate $n is prime$.  Now we may ask
 $g(13)$ and $g(15)$.  $g(13)$ is true while $g(15)$ is false.
