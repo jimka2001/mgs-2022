@@ -9,11 +9,11 @@ object Power {
   //      also support a negative exponent, however the first one cannot.
   //      Why can it not?
   //
-  def power(b: Int, n: Int): Int = {
+  def powerInt(b: Int, n: Int): Int = {
     if (n == 0)
       1
     else
-      b * power(b, n - 1)
+      b * powerInt(b, n - 1)
   }
 
   def power(b: Double, n: Int): Double = {
@@ -29,19 +29,26 @@ object Power {
   //      Implement String concatenation using the same model as the
   //      power function.  The function should accept a String, and an
   //      exponent n >= 0.  What should it return if n=0?
-  def power(b: String, n: Int): String = {
-    ???
-  }
+  /*def power(b: String, n: Int): String = {
+    if (n==0)
+      "1"
+    else
+
+  }*/
 
   // 6. TASK:
   //      Implement List concatenation using the same concept.  What
   //      should the function return when n=0?
-  def power[T](b: List[T], n: Int): List[T] = {
-    ???
-  }
+  /*def power[T](b: List[T], n: Int): List[T] = {
+    if (n == 0)
+      List(1)
+    else
+      b(T) * power(b, n-1)
+  }*/
 
   def main(argv: Array[String]): Unit = {
     println(s"3^5 = ${power(3, 5)}")
     println(s"3.0^-5 = ${power(3.0, -5)}")
+   // println("3", 3)
   }
 }

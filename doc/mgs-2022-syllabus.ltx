@@ -593,7 +593,7 @@ in Equation~\eqref{eq.slow.exponent}.
   x^n = \begin{cases}
     1 &\,; \text{if $n=0$}\\
     x \times x^{n-1} &\,; \text{if $n > 0$}\\
-    \frac{1}{x^{-n}} &\,; \text{if $n < 0$ and $m\ne 0$}
+    \frac{1}{x^{-n}} &\,; \text{if $n < 0$ and $n\ne 0$}
   \end{cases}
 \end{equation}
 
@@ -797,24 +797,7 @@ Figure~\ref{fig.scala.program} shows some of the elements of a Scala program.
 \end{enumerate}
 
 
-\subsection{Live coding}
-\label{sec.live.coding.fixed.sized.subsets}
-We implement the \code{fixedSizedSubsets} in live-coding.  The program
-will be modeled after equation~\eqref{eq.cases.1} in
-Section~\ref{sec.recurrence}.
 
-We write some tests.  Some of which pass, and some of which fail.  To
-compute the number of subsets of size $k$ of a set of size $n$ we need
-to compute~$n \choose k$ using the \code{factorial} function, which
-you will develop.
-
-
-You will also implement \code{countFixedSizedSubsets} as part of your
-programming exercises.  This function is also needed to pass the
-tests.
-
-
-\clearpage
 \section{Coding Exercises}\label{sec.coding.1}
 \begin{figure}
 \centering
@@ -885,7 +868,7 @@ then
 
 
 \subsection{Fibonacci numbers}
-
+\label{sec.fibonacci.numbers}
 \begin{itemize}
 \item Find the file \code{Fibonacci.scala}
 \item Implement a recursive function such that given $n$, the function
@@ -1689,6 +1672,14 @@ the power of $|n|$.
 \includegraphics[width=0.65\textwidth]{cs.jpg}
 \end{figure}
 
+\subsection{Some new types}
+\begin{itemize}
+\item \code{Option[T]}, \code{Some(x)}, \code{None}
+\item \code{Map[S,T]}
+\item Tuples \code{(S,T)}
+\item \code{X => Y}
+\end{itemize}
+
 \subsection{Monoid}
 \begin{itemize}
 \item \code{String} concatenation
@@ -1699,12 +1690,6 @@ the power of $|n|$.
   \code{fastPower}.
 \end{itemize}
 
-\subsection{Some new types}
-\begin{itemize}
-\item \code{Option[T]}, \code{Some(x)}, \code{None}
-\item \code{Map[S,T]}
-\item Tuples \code{(S,T)}
-\end{itemize}
 
 \subsection{Higher order functions}
 You will need functions like this to implement the Team Project in Section~\ref{sec.team.project.structures}.
@@ -1730,6 +1715,7 @@ given input value.
 \end{itemize}
 
 \subsection{Multiple dimensional types}
+
 
 \begin{itemize}
 \item  \code{Seq[Seq[Int]]},  \code{Seq[Seq[Double]]}
@@ -1810,7 +1796,7 @@ Write function to compute this quanity two different ways.
   prime factors.  \Ie,
   \begin{itemize}
   \item implement a function which, given $n$, uses
-    recursion to implement a function returns the prime factors of $n$.
+    recursion to compute and return the list of prime factors of $n$.
   \item Use that function to implement a function which, given $n$, returns
     the prime factors of $n!$.
   \item Effectively perform the division by
@@ -1856,33 +1842,34 @@ not the other because of integer overflow.
 \item Implement matrix arithematic functions: add, scale, subtract,
   multiply, identity, etc..
   
-\item Implement fast monoid multiply for matrices:
+\item Implement power multiply for matrices:
   \code{matrixPower}.  Do this in two different ways: by repeated
   multiplication (compute $M^n$ as a result of $n-1$
-  multiplications), and again using \code{fastPower}.  How do you
-  specify the monoidic arguments (multiplication and unit) for
-  \code{matrixPower} using \code{fastPower}.
+  multiplications), and again using the fast power algorithm.
   
 \item Can you devise a way to test whether \code{fastPower} is really
-  faster than \code{slowPower}? To compute a power of matrix $m$
-  the \emph{slow} way, you compute by $m-1$ consecutive
-  multiplications, e.g., using a recursive function.
+  faster?
 
-\item Test your code using \code{scalatest}. In the test case,
-  multiply the slow way and assert that the result is the same as
-  \code{matrixPower}.  Can you experimentally determine the time
-  needed to raise a large $m\times m$ matrix to the $n$th power
-  using the two algorithms?  To find out how to compute the time spent
-  in a scala function, do an internet search.
+%% \item Test your code using \code{scalatest}. In the test case,
+%%   multiply the slow way and assert that the result is the same as
+%%   \code{matrixPower}.  Can you experimentally determine the time
+%%   needed to raise a large $m\times m$ matrix to the $n$th power
+%%   using the two algorithms?  To find out how to compute the time spent
+%%   in a scala function, do an internet search.
   
 \item Use the \code{matrixPower} function to compute any three
   consecutive Fibonacci numbers: $F_{n-1}$, $F_{n}$, and $F_{n+1}$,
   \[\begin{bmatrix}1&1\\1&0\end{bmatrix}^n = \begin{bmatrix}F_{n+1}&F_n\\F_n&F_{n-1}\end{bmatrix}\]
   Do these results agree with those you computed in unit 1?
   
-\item You now have three ways to compute Fibonacci numbers.  
+\item In Section~\ref{sec.fibonacci.numbers}, you computing
+  Fibonacci number using an exponentially complex algorithm.
+  Now you have a way which you suspect is more efficient (faster).
   Devise an experiment to determine which of the approaches is
-  faster in terms of execution time?
+  faster in terms of execution time?  Hint, you may need to contstruct
+  a loop to do the same computation 100 times or 1000 times, and the
+  divide the total time by 100 or 1000 to compute the average time
+  per computation.
 \end{itemize}
 
 
