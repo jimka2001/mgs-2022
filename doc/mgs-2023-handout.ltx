@@ -70,8 +70,7 @@
 There are several objectives of this course:
 \begin{description}
 \item[Mathematics:] Ameliorate your love for Mathematics.
-\item[Computer Science:] Develop a sense of functional
-  programming.
+\item[Computer Science:] Develop a sense programming.
 \item[Communication:] Confidently defend your ideas.
 \end{description}
 
@@ -140,11 +139,6 @@ learn a lot.
 \section{Overview}
 
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.85\textwidth]{scala-programming.jpg}
-\end{figure}
-
 
 We will probably proceed through several units which mix three important experiences:
 
@@ -154,19 +148,9 @@ We will probably proceed through several units which mix three important experie
 \item Presentation --- Show and explain what you have done.
 \end{itemize}
 
-We will primarily cover an introduction to
-Abstract Algebra.  Our practical treatment of Algebra  will help
-you prepare for a more theoretical treatment at the university level.
-
-We will use a functional programming language called Scala,
-\url{https://www.scala-lang.org}.  Functional languages are considered
-by some to be more difficult than imperative languages, and students
-rarely start programming using a functional language.  Even if seen by
-many people as being exotic, you will find that a functional
-programming language can be a natural way to elegantly express certain
-mathematical concepts.  You will later be able to take the things
-you've learned and apply them back to other (more popular) programming
-languages such as Python, Java Script, Lisp, C++, etc.
+We will primarily cover an introduction to Abstract Algebra.  Our
+practical treatment of Algebra will help you prepare for a more
+theoretical treatment at the university level.
 
 
 
@@ -193,7 +177,7 @@ Week & Day & Unit & Activities\\
 \hline
 \end{tabular}
 
-\chapter{Collaboration}
+\chapter{Environment}
 
 \begin{figure}[h]
   \centering
@@ -202,82 +186,7 @@ Week & Day & Unit & Activities\\
 \end{figure}
 
 
-\section{VS Code}
 
-
-To develop a computer program you must create and edit text files.
-These are files containing only characters.  This \emph{can} be done
-using a simple text editor such as Notepad, or a more powerful editor
-such as \emph{emacs} or \emph{vi}.  Using an editor means the
-programmer must have a more complete understanding of the compiler and
-the build environment.  Many expert programmers prefer this approach
-as it gives more low-level control to the user.
-
-
-We will use an IDE (interactive
-development environment) rather than a text editor for this project.
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.95\textwidth]{gitpodenv.png}
-  \caption{The VS Code IDE runs stand-alone, or in the GitPod
-    development environment. The GitPod/VS~Code integration allows
-    you, the developer, to access remote a repository using only a web
-    browser.}\label{lab.gitpod.env}
-\end{figure}
-
-
-An IDE allows you to edit code as a text file. It also allows testing
-and debugging.  Learning a new programming language (Scala in our
-code) is much easier with an IDE as the environment provides many
-development hints such has highlighting, error detection, coding
-suggestions, and completion.
-
-An IDE often has a \emph{plug-in} for the programming language you
-are using, because syntax, naming, and usemodel may be very different
-from language to language.
-
-
-The most popular IDE today for working with Scala is probably
-IntelliJ.  However, setting up Scala on IntelliJ is often time
-consuming.  Instead, we will use
-\emph{VS~Code}\footnote{\url{https://code.visualstudio.com} and
-\url{https://en.wikipedia.org/wiki/Visual_Studio_Code}} which comes
-pre-installed in the cloud environment which we will use.  VS~Code is
-a free and open source product made by Microsoft for Windows, Linux,
-and MacOS.
-
-
-
-
-\section{Version Control}
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.95\textwidth]{branching.png}
-  %https://betterprogramming.pub/git-branching-strategy-for-better-team-collaboration-aacb5f235d05
-  \caption{Version Control allows us to manage development points in out project.}
-  \label{label.vc}
-\end{figure}
-
-
-A version control system allows us to maintain a history of our work;
-see Figure~\ref{label.vc}.  We can revisit previous states of our
-project.  We can also create branches to develop different features in
-parallel without them interfering with each other.
-
-An important feature of modern version control systems is collaboration.
-Developers can easily share their work with other developers.
-
-We will use \emph{git} as the version control system.  In recent years
-git has become ubiquitous in the field of open source software
-development.  There are many videos on YouTube to help a person learn
-git.  We will interact with git exclusively through our IDE.  The IDE
-hides most of the difficulty of performing simple tasks, but if
-something goes wrong, an IDE is not very good for debugging version
-control issues.
 
 
 \section{GitHub}
@@ -311,9 +220,9 @@ Typically, users have a development environment on their local computer
 (laptop or desktop) and periodically upload and download changes to
 the cloud.
 
-The URL \url{https://github.com/jimka2001/mgs-2022}, is the public
+The URL \url{https://github.com/jimka2001/mgs-2023}, is the public
 entry point to the GitHub project which we will work on in this
-MGS-2022 course.
+MGS-2023 course.
 How we will edit code in the GitHub project is described in Section~\ref{sec.gitpod}.
 
 You must create an account on GitHub (if you don't have one already).  This will be done
@@ -329,69 +238,26 @@ in Section~\ref{sec.coding.1}.
   \includegraphics[width=0.9\textwidth]{gitpod-teaser.jpg}
 %%  \url{https://www.gitpod.io/images/blog/cloud-based-development-for-everyone/teaser.jpg}
   \caption{GitPod provides a web-brower-based development environment
-    which integrates VS~Code with GitHub.}
+    which integrates with GitHub.}
 \end{figure}
 
-
-Most people install software such as IDEs (integrated development
-environments), editors, compiler, language implementations, version
-control software, onto their personal computer or laptop.   You are free
-to do that when you return home.  But for the entirety of MGS-2022, we'll
-use a development environment entirely on the cloud.
-
-We will use a web based service called, GitPod to provide an
+We will use a development environment entirely on the cloud---
+a web based service called, GitPod to provide an
 environment for working with GitHub.  This environment and all the
-code you develop will still be available to you after MGS-2022 is
+code you develop will still be available to you after MGS-2023 is
 finished.
 
 The GitPod web site is \url{https://www.gitpod.io}.
 
-Figure~\ref{lab.gitpod.env} shows an image of what the development environment looks like.
+\section{Getting Started}
 
-
-
-GitPod provides a version control interface. You should be able to do
-all code editing, and collaboration efforts (push, pull, view history)
-using this interface.
-
-\section{The Environment}
-
-It may be a bit tedious to set up the development environment, because
-before you can learn to use a piece of software, you have to install
-it; necessarily you are installing things you don't yet understand.
-The following steps should help, but often things go wrong with
-set-up, so we'll troubleshoot as we go.
 
 \begin{enumerate}
 \item Create a GitHub account using an abstract user name.  Don't use
-  your real name.  This URL,
-  \url{https://git-scm.com/book/en/v2/GitHub-Account-Setup-and-Configuration}
-  explains how to create a GitHub account.  There are many similar
-  web-sites, e.g.,
-  \url{https://www.wikihow.com/Create-an-Account-on-GitHub}.
-  Primarily this is self explanatory at the URL
-  \url{https://github.com/join}.
-\item (Optional) Configure your GitHub account with an profile image.  Don't use
-  a picture of yourself, rather use an abstract avatar
-  such as \url{https://www.flaticon.com/search?word=animal+avatar}.
-\item Configure GitHub to keep your email address private.
-  \begin{enumerate}
-  \item In the upper-right corner of any page, click your profile photo, then click \textbf{Settings}.
-  \item In the "Access" section of the sidebar, click  \textbf{Emails}.
-
-  \includegraphics[height=5cm]{github-settings.png}
-
-  \item To keep your email address private when performing web-based
-    Git operations, click \textbf{Keep my email addresses private}.
-  \item To keep your email address private in commits you push from
-    the command line, select \textbf{Block command line pushes that
-      expose my email}.
+  your real name.    \url{https://github.com/join}.
 
 
-  \end{enumerate}
-  \includegraphics[width=0.95\textwidth]{email_privacy_block_command_line_pushes.png}
-
-\item Open \url{https://github.com/jimka2001/mgs-2022} with your web browser.
+\item Open \url{https://github.com/jimka2001/mgs-2023} with your web browser.
 
 \begin{figure}
 \centering
@@ -404,64 +270,9 @@ set-up, so we'll troubleshoot as we go.
 \item Open the web-ide with GitPod, you may just prepend
   \url{http://gitpod.io/#} to the URL already in the web browser.
 
-\begin{figure}
-\centering
-  \includegraphics[width=0.5\textwidth]{explorer.png}
-\caption{Opening \code{Main.scala}}\label{lab.explorer}
-\end{figure}
-
-\item Find the Explorer, and open it to find \code{Main.scala} at
-  \url{src/main/scala/introduction/Main.scala}. See Figure~\ref{lab.explorer}.
-
-\begin{figure}
-\centering
-  \includegraphics[width=0.85\textwidth]{open-object-Main.png}
-\caption{The editor pane of the \code{Main} object.}\label{lab.object.main}
-\end{figure}
-
-\item Click \code{Main.scala} to open the file in an editor pane.  You
-  should see something like that shown in Figure~\ref{lab.object.main}.
-
-
-\item The \code{run | debug} link between
-  lines 2 and 3 may not appear immediately, you may have to wait a
-  couple of minutes. If you don't see \textbf{run debug}, you may
-  need to restart the build server, and recompile.  Find and click
-  the Metals icon \includegraphics[height=2cm]{metals.png}.  This
-  should open the Metals panel where you can \textbf{Restart the
-    build Server} and \textbf{Cascade compile}. 
-  
-  \includegraphics[width=8cm]{buildserver.png}
-  
-  Thereafter, you should be able to find the \textbf{run|debug} link
-  in the Scala code.
-
-\item Find the definition \code{object Main}.
-  If you click on \code{Main} you should see something like this:
-  
-  \includegraphics[height=1.5cm]{rundebug.png}
-  
-  Click \textbf{run}.  
-
-\item You should see a new window pane appear below the program text
-  showing  \code{hello world}, as shown in Figure~\ref{lab.afterrun}.
-
-
-\begin{figure}
-\centering
-  \includegraphics[width=0.85\textwidth]{afterrun.png}
-\caption{The editor pane after running the \code{Main} object.}\label{lab.afterrun}
-\end{figure}
 
 
 \end{enumerate}
-
-\section{Team work}
-\begin{itemize}
-\item projects using git and GitHub
-\item pull request
-\item merge and rebase
-\end{itemize}
 
 
 \clearpage
@@ -637,7 +448,7 @@ numbers.  Let $F(n)$ denote the n'th Fibonacci number.
   \end{cases}
 \end{equation}
 
-\chapter{Programmatic Sets and Functions}
+\chapter{Programming with Functions}
 
 \begin{figure}[b!]
 \centering
@@ -645,130 +456,21 @@ numbers.  Let $F(n)$ denote the n'th Fibonacci number.
 \end{figure}
 
 
-\section{Functional Programming Languages}
-
-We will not spend much time talking about programming languages which
-are not \emph{functional} but very briefly:  imperative programming
-languages tend to model the machine, allowing you to phrase your
-programs in a way which the machine can interpret.  Functional
-languages, tend to make the machine understand mathematical notations,
-which is a more natural and elegant way of thinking.  Functional
-languages are often considered more difficult and more exotic.
-However, not everyone (including your instructor) agrees that they
-need to be considered difficult.
-
-
-Imperative languages allow you to detail how a computation should be
-carried out.  Functional languages allow you describe the problem in
-terms of what the solution looks like.
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{functionalvsimperative.jpg}
-\caption{Imperative vs Functional programming}
-\end{figure}
-
-The web site and lots of documentation about the Scala language can be
-found here: \url{https://www.scala-lang.org}.  The newest Scala
-version is 3.1.x; however, we will use 2.13.8 (or higher).
-
-\section{Elements of a Scala program}
-
-\begin{figure}
-\centering
-\includegraphics[width=\textwidth]{quadratic.png}
-\caption{Some Elements of a Scala Program, definition of an object containing a function.}
-\label{fig.scala.program}
-\end{figure}
-
-Figure~\ref{fig.scala.program} shows some of the elements of a Scala program.
-
-\begin{enumerate}
-
-\item Lines~7 through~15 define a function named
-  \code{quadraticFormula}.  This function has 3 arguments, \code{a},
-  \code{b}, and \code{c}, each of type \code{Int}---meaning that
-  whenever the function is called, the call-site must provide 3
-  integer arguments.
-
-\item Lines~12 and~13 are two mathematical computations computing the
-  roots of a specified polynomial. These values are each
-  double-precision floating-point values (each a \code{Double}).
-
-
-\item Computing the values on lines~12 and~13 involves computing a
-  square root, $\sqrt{b^2 - 4ac}$.  The \code{sqrt} function in not
-  normally visible to the programmer; it must be \emph{imported}.  The
-  statement on line~3 imports the \code{sqrt} function name into the
-  visible name space.
-
-\item If $b^2=4ac$, then $\sqrt{b^2-4ac}=0$.  In this case the two
-  values computed on Lines~12 and~13 will be the same (a root of order
-  two), we specify that duplicate elements are removed from the list
-  by \code{List(...).distinct} on lines~11 and~14.
-
-\item The function, \code{quadraticFormula}, returns a value which has
-  type \code{List[Double]}, which is a list of double-precision
-  (64-bit) floating point numbers.  The valued within the function
-  computed in the tail position is the return value from the function.
-  In this case, the expression in tail position is the one comprising
-  lines~11 through~14: \code{List(...).distinct}.  Usually the tail
-  position is the final value (bottom-most) in the function.  But in
-  the case of an \code{if/else} the tail-position value will be which
-  ever branch of the conditional is taken at run-time.
-
-\item Many other types are also available as variables, and function
-  return values.  Some types which we will encounter are
-  \code{Boolean}, \code{String}, \code{Tuple[]}, \code{Unit}, as well as
-  many more.
-
-\item The function named \code{main} which must be defined as shown in
-  line~17, is regarded as the starting point of the program.  In this
-  case, \code{main}, makes two calls to \code{quadraticFormula} on
-  lines~19 and~20.
-
-\item Function parameters are grouped with parentheses, and separated by commas.
-
-\item Function calls are grouped with curly-braces.
-
-\item The functions are defined with an \code{object}, starting on
-  line~5 and ending on line~22.  This object has the name
-  \code{QuadraticFormula} which is the same as the function but with
-  different case, i.e., different capitalization.  In the Scala
-  language, names are considered \emph{the same} if they have the same
-  spelling and the same capitalization.
-
-\item Line~1 defines a \code{package} named \code{functions}, which
-  normally is the same as the directory name the file resides in.
-  This correspondence of directory name and package name is
-  conventional and not absolutely required.
-
-\end{enumerate}
-
 \section{Programming constructs}
 
 \begin{enumerate}
 
 \item Conditionals
 
-\item Recursive functions
+\item Functions
 
-\item Collection types: \code{List[]}, \code{Tuple[]}, \code{Vector[]}, \code{Set[]}.
+\item Variables
+
+\item Collections: lists, sets, tuples
   
 \end{enumerate}
 
 
-\chapter{Coding Functions}
-\label{sec.coding.1}
-
-
-
-
-
-\begin{figure}[b!]
-\centering
-\includegraphics[width=0.85\textwidth]{coding.jpg}
-\end{figure}
 
 \section{Implement the Quadratic Formula}\label{sec.quadratic.formula}
 
@@ -779,27 +481,28 @@ then
 \[x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\,.\]
 
 \begin{itemize}
-\item Find the function \code{quadraticFormula}, implement a test
-  for this function.   The Scala function implements the mathematical
+\item Implement the function \code{quadraticFormula}.
+  The function should implement the mathematical
   function $x_{1,2}(a,b,c) = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.  The function computes the roots
   of the polynomial $ax^2 + bx + c$, assuming $a>0$, and assuming $b^2 \geq 4ac$.
-  The test should go in the file \texttt{QuadraticFormula.scala} in
-  directory \texttt{src/test/scala/functions}.  There is
-  already a function stub you can use.
+
+
 \item Enhance \code{quadraticFormula}: Notice that the current
   implementation is inefficient, because it computes almost the same
-  thing twice.  Also if you call the function with \code{a,b,c} for
-  which there are no real solutions, the function will return
-  \code{NaN,NaN}. What is \code{NaN}?  If you don't know, look it up
-  with an internet search.  You should refactor the function to
-  define a variable \code{discriminant} whose value is
+  thing twice.
+
+\item What happens if $ax^2 + bx + c$ does not have real roots? If you
+  call the function with \code{a,b,c} what is returned?
+  
+  You should refactor the function to define a variable
+  \code{discriminant} whose value is
   \[\Delta = b^2 - 4 a c\,.\]
   Then there are three cases, if ${\Delta < 0}$, if ${\Delta = 0}$, and
-  if ${\Delta > 0}$. Refactor the function so that if there are no
+  if ${\Delta > 0}$.  Refactor the function so that if there are no
   real roots it returns an empty list; if there is a unique 
   solution, return a list of one number; and if there are two
   distinct solutions, return a list of those two solutions
-  \textbf{in increasing order}.  I.e., if you return \code{(a,b)}
+  \textbf{in increasing order}.  \Ie, if you return \code{[a,b]}
   assure that $a < b$.  Also update the test case to check for
   $a<b$.
 \end{itemize}
@@ -808,18 +511,11 @@ then
 \section{Recursive Functions}
 \label{sec.recursive.functions}
 \begin{itemize}
-\item File \code{Power.scala}
-  \begin{itemize}
-  \item Implement \code{power} for \code{Int} and \code{Double}.  In
-    the case of \code{Double} you should also handle the case of a
-    negative exponent.
-  \item Implement \code{String} concatenation using the power model.
-  \item Implement \code{List} concatenation using the power model.
-  \end{itemize}
-\item File \code{Factorial.scala}
-  \begin{itemize}
+\item Implement \code{power}.  You should also handle the case of a
+  negative exponent.
+\item Implement \code{String} concatenation using the power model.
+\item Implement \code{List} concatenation using the power model.
   \item Implement \code{factorial}. 
-  \end{itemize}
 \end{itemize}
   
 \textbf{Discussion:} In the \code{factorial} function, do we
@@ -831,12 +527,22 @@ then
 \section{Fibonacci Sequence}
 \label{sec.fibonacci.numbers}
 \begin{itemize}
-\item Find the file \code{Fibonacci.scala}
 \item Implement a recursive function such that given $n$, the function
   returns the nth Fibonacci number, $F_n$.
-\item What is the largest Fibonacci number you can compute in Scala?
-\item Search on the internet and find the Binet's formula for computing the nth Fibonacci number.
-  Implement this function and compare the results to the recursive implementation.
+\item Analyze the recursive profile of the Fibonacci generator?
+\item Suppose that one recursive call requires $m$ bytes, and your computer has a total of $M$ bytes of memory,
+  can you find a bound for the maximum Fibonacci which is possible to compute?
+\item Search on the internet and find the Binet's formula for
+  computing the nth Fibonacci number.  Implement this function and
+  compare the results to the recursive implementation.  
+\item Can you think of another way to make the Fibonacci generator faster?
+\item \textbf{Making code faster} Now you have a way which you suspect
+  is more efficient (faster).  Devise an experiment to determine which
+  of the approaches is faster in terms of execution time?  Hint, you
+  may need to contstruct a loop to do the same computation 100 times
+  or 1000 times, and the divide the total time by 100 or 1000 to
+  compute the average time per computation.
+
 \end{itemize}
 
 \section{Binary Search}
@@ -863,8 +569,6 @@ If we don't find the exact value we are searching for, then we must have a
 termination condition to avoid looping forever.  Typically the way this is
 done is to recur until the interval is sufficiently small:  i.e., until
 ${x_{right} - x_{left} < \varepsilon}$.
-
-
 
 \section{Roots of a Cubic Polynomial}
 
@@ -963,7 +667,9 @@ An implication is yet again a proposition, and like any proposition it may be tr
 
 \section{De Morgan's theorem}
 
-We say De Morgan's theorem for sets already.   But logic and set theory are duals, so De Morgan's theorm can also be stated for propositions and predicates.
+We saw De Morgan's theorem for sets already.  But logic and set theory
+are duals, so De Morgan's theorm can also be stated for propositions
+and predicates.
 
 \[\neg \jparen{p(x) \vee q(x)} = \neg p(x) \wedge \neq q(x)\]
 
@@ -991,12 +697,53 @@ Three very common styles of loops are
 
 \subsection{Loop for detection}
 
+\code{any}, \code{all}, \code{next}
+
+How does De Morgan's theorem apply to \code{any} and \code{all}?
+
+What does \code{next} do when it does not find an element matching the predicate?
+
 \subsection{Loop for collection}
+
+List comprehensions.
 
 \subsection{Loop for side-effect}
 
+\code{for}
+
+\subsection{Concentric loops}
 
 \section{Programming Projects}
+
+
+
+\begin{enumerate}
+\item Choose one challenge:
+  \begin{enumerate}
+  \item Collect all prime
+    numbers between $n$ and $m$.
+  \item Collect all Pythagorean triples between 1 and $n$.
+  \item Find (print or collect) all solutions to
+    $a^3 + b^3 + c^3 = 1$ for $a,b,c$ in range
+    of $-n$ to $n$.
+  \item Taxi cab numbers: For a given $n$, find numbers between
+    $-n$ and $n$ which are
+    the sum of two cubes in two different ways.  E.g., $1729 = 12^3 +
+    1^3 = 9^3 + 10^3$.
+  \item Linear Diophantine Equations: Given integers $a$, $b$, $c$,
+    and $n$, find all integer solutions ($|x|<n$ and $|y|<n$) to
+    the equation $ax + by = c$.  \Eg,
+    $2x + 4y = 28$ has $x=12$, $y=1$ as solution but also $x=2$, $y=6$.
+  \end{enumerate}
+  
+\item Work as individual or team.
+\item Create a new file in the \code{functions} directory.
+\item Try to solve the challenge using \code{any}, \code{all}, \code{next}, \code{for}.
+\item (Optional) If possible, can you make it faster? \Eg, decrease the search space.
+\item When finished and working, submit a \emph{pull request}
+\item Show, explain, and defend your solution to your fellow scholars.
+\end{enumerate}
+
 
 
 \chapter{Abstract Algebra}
@@ -1131,14 +878,19 @@ identity element: $e_1$ and $e_2$?  The answer is no, but why?
 
 \item The set of even integers under addition is a monoid.
 
-\item The set of even integers under multiplication is a not monoid.  Why?
+\item The set of even integers under multiplication is a not monoid.  Why? Which axiom(s) fail?
   
+\item The set of integers under exponentiation is not monoid. Why? Which axiom(s) fail?
+
 \item ${(\mathbb{R},\times)}$, the set of positive real numbers under multiplication is a monoid.
 
 \item The set of $2\times 3$ matrices under addition is a monoid.  
 
 \item The set of $2\times 3$ matrices under multiplication is not a monoid.  However the set of $3\times 3$  matrices under multiplication is a monoid. Why? 
 
+
+\item The set of logical predicates.  What is the identity element?
+  
 \item The set of subsets of a given set using the operation of union is a monoid.  What is the identity element?
 \item The set of subsets of a given set using the operation of intersection is a monoid.  What is the identity element?
 
@@ -1695,56 +1447,6 @@ have and multiplicative inverse even though all elements have an
 additive inverse.
 
 
-\chapter{Programming Sets with Structure}
-\begin{figure}
-\centering
-\includegraphics[width=0.65\textwidth]{cs.jpg}
-\end{figure}
-
-\section{Some new types}
-\begin{itemize}
-\item \code{Option[T]}, \code{Some(x)}, \code{None}
-\item \code{Map[S,T]}
-\item Tuples \code{(S,T)}
-\item \code{X => Y}
-\end{itemize}
-
-\section{Monoid}
-\begin{itemize}
-\item \code{String} concatenation
-\item \code{List[Int]}, \code{Vector[Int]}, \code{Seq[Int]} concatenation
-\item Implement \code{fastPower} for \code{Double}.
-\item Refactor (or re-implement) \code{power} (for \code{String} and
-  \code{List}) from Section~\ref{sec.recursive.functions} to work like
-  \code{fastPower}.
-\end{itemize}
-
-
-\section{Higher order functions}
-You will need functions like this to implement the Team Project in Section~\ref{sec.team.project.structures}.
-
-What is a \emph{predicate}?  It is a pure function which returns a
-\code{Boolean}.  It is used to determine which a property holds for a
-given input value.
-
-\begin{itemize}
-\item \code{find} --- find an element of a collection (if such exists)
-  which satisfies a given predicate.  \code{Option[T]}
-\item \code{forall} --- does every element of a collection satisfy a
-  given predicate.  Remember the collection might be empty.
-\item \code{exists} --- does at least one element of a sequence
-  satisfy a given predicate.
-\item \code{filter} --- collect all the elements of a collection which
-  satisfy a given predicate.
-\item \code{sortBy}/\code{sortWith} --- reorder (sort) the elements of
-  a sequence according to a given function.
-\item \code{map} --- create a new sequence by applying a given
-  function iteratively to each element of a collection.
-  
-\end{itemize}
-
-
-\clearpage
 
 
 
@@ -1810,15 +1512,6 @@ not the other because of integer overflow.
 
 
 
-\section{Making code faster}
-In Section~\ref{sec.fibonacci.numbers}, you computing
-  Fibonacci number using an exponentially complex algorithm.
-  Now you have a way which you suspect is more efficient (faster).
-  Devise an experiment to determine which of the approaches is
-  faster in terms of execution time?  Hint, you may need to contstruct
-  a loop to do the same computation 100 times or 1000 times, and the
-  divide the total time by 100 or 1000 to compute the average time
-  per computation.
 
 
 \section{Group Interactive Project}
