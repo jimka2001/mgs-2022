@@ -607,13 +607,16 @@ in Equation~\eqref{eq.slow.exponent}.
   x^n = \begin{cases}
     1 &\,; \text{if $n=0$}\\
     x \times x^{n-1} &\,; \text{if $n > 0$}\\
-    \frac{1}{x^{-n}} &\,; \text{if $n < 0$ and $n\ne 0$}
+    \frac{1}{x^{-n}} &\,; \text{if $n < 0$ and $x\ne 0$}
   \end{cases}
 \end{equation}
 
 
 Similarly, we can define the factorial as
-\[n! = 1 \times 2 \times \ldots \times n\]
+\begin{equation}\label{eq.intuitive.factorial}
+  n! = 1 \times 2 \times \ldots \times n
+\end{equation}
+
 or we can define it as
 \begin{equation}
   n! = \begin{cases}
@@ -835,6 +838,38 @@ then
 \item Search on the internet and find the Binet's formula for computing the nth Fibonacci number.
   Implement this function and compare the results to the recursive implementation.
 \end{itemize}
+
+\section{Binary Search}
+\label{sec.binary.search}
+
+A binary search algorithm is a divide an conquer algorithm.  Suppose
+we know that some \emph{event} occurs at a number between $x_{left}$
+and $x_{right}$.  For example, suppose $f(x) = 0$ for some
+$x_{left} < x < x_{right}$.  Then if we take $x_{mid} = \frac{x_{left} + x_{right}}{2}$, then
+at least one of the following is true.
+
+\begin{align}
+  f(x) & = 0 & \text{ for some } x_{left} < x \leq x_{mid}\\
+  f(x) & = 0 & \text{ for some }  x_{mid} < x < x_{right}
+\end{align}
+
+This means if we split the interval $(x_{left},x_{right})$ in half,
+the \emph{event} occurs either in the left half or the right half.
+In such a case, we can write a (recursive) function which divides the
+interval in half, and \emph{recurs} either on the right half or left half.
+We end the recursion when we have found the event.
+
+If we don't find the exact value we are searching for, then we must have a
+termination condition to avoid looping forever.  Typically the way this is
+done is to recur until the interval is sufficiently small:  i.e., until
+${x_{right} - x_{left} < \varepsilon}$.
+
+
+
+\section{Roots of a Cubic Polynomial}
+
+Can we combine the technique of Sections~\ref{sec.recursive.functions}
+and ~\ref{sec.binary.search} to find the roots of a cubic equation?
 
 \chapter{Logic and Looping}
 
@@ -1190,7 +1225,7 @@ identity element: $e_1$ and $e_2$?  The answer is no, but why?
 
 \clearpage
 \section{Fast Exponentiation in a Monoid}
-
+\label{sec.monoid.exponent}
 Recall the definition of exponentiation in
 Equation~\eqref{eq.slow.exponent}.  In any monoid with operation $\circ$ and identity
 element $e$, we can compute an
@@ -1235,7 +1270,11 @@ support negative exponents?
 
 
 \section{Proofs with Monoids}
-
+\begin{itemize}
+\item Prove the identity of a monoid is unique
+\item Give an example of a 2 element monoid.
+\item Given an example of a 3 element monoid.
+\end{itemize}
 
 \chapter{Groups, Rings, and Fields}
 
@@ -1405,7 +1444,8 @@ with the following multiplication table.
 
 Create an exponentiation function for a group which also handles negative exponents.
 
-
+Why can we compute negative exponents in a group but not in a monoid?
+Recall Section~\ref{sec.monoid.exponent}.
 
 \clearpage
 \section{Ring}
@@ -1421,12 +1461,15 @@ $(S,+,\times)$ is called a \emph{ring} if
 \begin{enumerate}
 \item $(S,+)$ is an Abelian group.
 \item $(S,\times)$ is a monoid.
-\item Distributive: $a,b,c  \in S \implies a\times(b+c)=(a\times b)+(a\times c)$.
+\item Left-to-right distribution: \\$a,b,c  \in S \implies a\times(b+c)=(a\times b)+(a\times c)$.
+\item Right-to-left distribution: \\$a,b,c  \in S \implies (b+c)\times a=(b\times a)+(c\times a)$.
 \end{enumerate}    
 
 \noindent In the special case that $(S,\times)$ is commutative,
 $(S,+,\times)$ is called an Abelian ring.
 \end{definition}
+
+
 
 
 In the set of whole numbers we can think of multiplication as repeated
@@ -1702,32 +1745,6 @@ given input value.
 
 
 \clearpage
-
-\section{Binary Search}
-
-A binary search algorithm is a divide an conquer algorithm.  Suppose
-we know that some \emph{event} occurs at a number between $x_{left}$
-and $x_{right}$.  For example, suppose $f(x) = 0$ for some
-$x_{left} < x < x_{right}$.  Then if we take $x_{mid} = \frac{x_{left} + x_{right}}{2}$, then
-at least one of the following is true.
-
-\begin{align}
-  f(x) & = 0 & \text{ for some } x_{left} < x \leq x_{mid}\\
-  f(x) & = 0 & \text{ for some }  x_{mid} < x < x_{right}
-\end{align}
-
-This means if we split the interval $(x_{left},x_{right})$ in half,
-the \emph{event} occurs either in the left half or the right half.
-In such a case, we can write a (recursive) function which divides the
-interval in half, and \emph{recurs} either on the right half or left half.
-We end the recursion when we have found the event.
-
-If we don't find the exact value we are searching for, then we must have a
-termination condition to avoid looping forever.  Typically the way this is
-done is to recur until the interval is sufficiently small:  i.e., until
-${x_{right} - x_{left} < \varepsilon}$.
-
-
 
 
 
